@@ -28,6 +28,14 @@ body {
   margin-top: 72px;
 }
 
+.menu1 img,
+.menu2 img,
+.menu3 img,
+.menu4 img,
+.menu5 img {
+  width: 32px;
+  height: 32px;
+}
 .menu1 {
   width: 91%;
   height: 25px;
@@ -36,15 +44,6 @@ body {
   display: flex;
   align-items: flex-end;
   gap: 10px;
-}
-
-.menu1 img,
-.menu2 img,
-.menu3 img,
-.menu4 img,
-.menu5 img {
-  width: 32px;
-  height: 32px;
 }
 
 .menu2 {
@@ -58,6 +57,18 @@ body {
   gap: 10px;
 }
 
+.menuExpandir {
+  display: none;
+  padding: 12px 0px 25px 17px;
+  width: 91%;
+  height: 35px;
+  background: rgba(244, 130, 33, 1);
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
 .menu3 {
   width: 91%;
   height: 25px;
@@ -69,7 +80,7 @@ body {
 }
 
 .menu4 {
-  margin-top: 170px;
+  margin-top: 200px;
   width: 91%;
   height: 25px;
   color: rgba(170, 111, 52, 1);
@@ -87,6 +98,12 @@ body {
   display: flex;
   align-items: flex-end;
   gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.menu5:active {
+  transform: scale(0.95);
 }
 
 .mostrarUsuario {
