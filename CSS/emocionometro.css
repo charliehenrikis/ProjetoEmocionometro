@@ -66,9 +66,7 @@ body {
   color: white;
   flex-direction: column;
   justify-content: center;
-  
 }
-
 
 .menu3 {
   width: 91%;
@@ -134,7 +132,7 @@ body {
   margin-top: 100px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .telaPrincipal {
@@ -142,8 +140,8 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  height: 100vh; 
-  margin: 0; 
+  height: 100vh;
+  margin: 0;
   overflow: hidden;
 }
 
@@ -151,4 +149,41 @@ body {
 .professor {
   text-decoration: none;
   color: white;
+}
+
+.grafico1 {
+  display: flex;
+}
+.grafico1 img {
+  width: 615px;
+  border-radius: 4%;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.grafico2 {
+  margin-left: 68px;
+}
+
+.grafico2 img {
+  border-radius: 10%;
+  height: 280px;
+  width: 280px;
+}
+
+.branco {
+  margin-bottom: 10px;
+  margin-left: 68px;
+}
+
+.branco img {
+  border-radius: 10%;
+  width: 280px;
+  height: 110px;
+  margin-top: 20px;
+}
+
+.graficoLado {
+  margin-right: 140px;
+  margin-top: 2px;
 }
