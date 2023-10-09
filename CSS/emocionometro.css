@@ -45,6 +45,10 @@ body {
   align-items: flex-end;
   gap: 10px;
 }
+.menu1 a {
+  text-decoration: none;
+  color: rgba(170, 111, 52, 1);
+} 
 
 .menu2 {
   width: 91%;

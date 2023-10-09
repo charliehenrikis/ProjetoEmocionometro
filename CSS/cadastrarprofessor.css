@@ -88,7 +88,6 @@ body {
   color: rgba(170, 111, 52, 1);
 }
 
-
 .menu4 {
   margin-top: 150px;
   width: 91%;
@@ -163,4 +162,26 @@ body {
 
 .emocionometro {
   text-decoration: none;
+}
+
+.cadastroProfessor {
+  background-color: white;
+  width: 90%;
+  height: 50%;
+  border-radius: 2%;
+  padding: 20px;
+  margin-left: 30px;
+}
+
+.formularioHorizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+input {
+  width: 200px;
+  height: 30px;
 }

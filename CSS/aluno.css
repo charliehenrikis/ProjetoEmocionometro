@@ -50,7 +50,6 @@ body {
   text-decoration: none;
   color: rgba(170, 111, 52, 1);
 }
-
 .menu2 {
   width: 91%;
   height: 35px;
@@ -87,7 +86,6 @@ body {
   text-decoration: none;
   color: rgba(170, 111, 52, 1);
 }
-
 
 .menu4 {
   margin-top: 150px;
@@ -164,3 +162,97 @@ body {
 .emocionometro {
   text-decoration: none;
 }
+
+.cadastro {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: -40px;
+  padding: 20px;
+}
+
+.entrar {
+  width: 150px;
+  height: 50px;
+  border-radius: 10%;
+  color: white;
+  background-color: rgba(0, 194, 71, 1);
+  border: none;
+  margin-top: 70px;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  vertical-align: middle;
+  
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-left: 20px;
+  padding-right: 40px;
+ 
+}
+
+tbody td {
+  border-bottom: 20px solid #f5f4f9;
+}
+
+
+td {
+  padding: 10px;
+  background-color: white;
+  color: rgba(33, 33, 33, 1);
+}
+
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.action img {
+  width: 20px;
+  height: 22px;
+}
+
+.ativo {
+  margin-left: 10px;
+}
+
+.ativo img {
+  width: 25px;
+  height: 16px;
+}
+
+.textAndSearch {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.textSearch {
+  background-color: white;
+}
+
+.inputBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid white;
+  padding: 5px;
+  background-color: white;
+}
+
+.inputBox input {
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+
+
