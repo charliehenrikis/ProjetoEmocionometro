@@ -1,7 +1,7 @@
 var voltarLogin = document.getElementById("voltarLogin");
 
 voltarLogin.addEventListener("click", function () {
-  window.location.href = "login.html";
+  window.location.href = "../index.html";
 });
 
 // Código para exibir a Div Oculta no .MENU2
@@ -29,4 +29,18 @@ voltarLogin.addEventListener("click", function () {
   // menuExpandir.style.display = menu2.classList.contains("expanded") ? "block" : "none";
   });
 
+//ALTERAR FOTO ATIVO PARA INATIVO
+const elementosAtivos = document.querySelectorAll(".ativo");
 
+elementosAtivos.forEach((elemento) => {
+  elemento.addEventListener("click", function () {
+    const imagem = elemento.querySelector("img");
+    const nomeArquivo = imagem.getAttribute("src").split("/").pop();
+
+    if (nomeArquivo === "desativo.png") {
+      imagem.setAttribute("src", "../IMG/ativo.png");
+    } else {
+      imagem.setAttribute("src", "../IMG/desativo.png");
+    }
+  });
+});

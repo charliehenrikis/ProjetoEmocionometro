@@ -1,7 +1,7 @@
 var voltarLogin = document.getElementById("voltarLogin");
 
 voltarLogin.addEventListener("click", function () {
-  window.location.href = "login.html";
+  window.location.href = "../index.html";
 });
 
 // Código para exibir a Div Oculta no .MENU2

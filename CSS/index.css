@@ -1,166 +1,160 @@
 body {
-  padding: 0px;
-  margin: 0;
   font-family: "Nunito", sans-serif;
-  background-color: #f5f4f9;
-}
-
-.imagemcabecario img {
-  padding: 10px;
-  width: 180px;
-  height: 45px;
-}
-
-.cabecario {
-  background: white;
-  border-bottom: 3px solid gray;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  position: fixed;
-}
-
-.menulateral {
-  display: block;
-  background-color: rgba(249, 228, 35, 1);
-  width: 200px;
-  height: calc(100vh - 65px);
-  margin-top: 72px;
-}
-
-.menu1 img,
-.menu2 img,
-.menu3 img,
-.menu4 img,
-.menu5 img {
-  width: 32px;
-  height: 32px;
-}
-.menu1 {
-  width: 91%;
-  height: 25px;
-  color: rgba(170, 111, 52, 1);
-  padding: 12px 0px 25px 17px;
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.menu1 a {
-  text-decoration: none;
-  color: rgba(170, 111, 52, 1);
-}
-
-.menu2 {
-  width: 91%;
-  height: 35px;
-  background: rgba(250, 166, 26, 1);
-  color: rgba(255, 255, 255, 1);
-  padding: 12px 0px 25px 17px;
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.menuExpandir {
-  display: none;
-  padding: 12px 0px 25px 17px;
-  width: 91%;
-  height: 35px;
-  background: rgba(244, 130, 33, 1);
-  color: white;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.menu3 {
-  width: 91%;
-  height: 25px;
-  color: rgba(170, 111, 52, 1);
-  padding: 12px 0px 25px 17px;
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.menu3 a {
-  text-decoration: none;
-  color: rgba(170, 111, 52, 1);
-}
-
-
-.menu4 {
-  margin-top: 150px;
-  width: 91%;
-  height: 25px;
-  color: rgba(170, 111, 52, 1);
-  padding: 12px 0px 25px 17px;
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.menu5 {
-  width: 91%;
-  height: 25px;
-  color: rgba(170, 111, 52, 1);
-  padding: 12px 0px 25px 17px;
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.menu5:active {
-  transform: scale(0.95);
-}
-
-.mostrarUsuario {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  left: 1000px;
-  top: 8px;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(249, 228, 35, 1);
-  border-radius: 50%;
-}
-
-.mostrarUsuarioText {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  left: 1005px;
-  width: 69px;
-}
-
-.corpo {
-  width: 100%;
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-}
-
-.telaPrincipal {
-  border: black;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  height: 100vh;
   margin: 0;
-  overflow: hidden;
+  display: flex;
 }
 
-.aluno,
-.professor {
-  text-decoration: none;
+.principalLogin {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.esquerdaLogin img {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  background-color: whitesmoke;
+  border-radius: 15px;
+}
+
+.direitaLogin {
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logopequena {
+  width: 315px;
+}
+
+.campos {
+  padding: 0px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.campos form {
+  display: flex;
+  flex-direction: column;
+}
+
+.campoOutros {
+  display: flex;
+  flex-direction: column;
+}
+
+.campos h1 {
+  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  justify-content: left;
+}
+
+.entrar {
+  background-color: #e0e0e0;
   color: white;
+  border: 0;
+  width: 20vw;
+  height: 5vh;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.emocionometro {
-  text-decoration: none;
+.submit-button {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textBox {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.textBox input {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid gray;
+  padding: 1rem;
+  border-radius: 3%;
+}
+
+.textBox label {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 0 0.5rem;
+}
+
+.lembrarText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.esqueceuSenha {
+  margin-left: auto;
+}
+
+.textAbaixo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cadastro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2px;
+}
+
+.cadastrar {
+  background-color: #00c247;
+  color: white;
+  border: 0;
+  width: 20vw;
+  height: 5vh;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 950px) {
+  .direitaLogin {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .principalLogin {
+    flex-direction: column;
+    background-color: whitesmoke;
+  }
+  .esquerdaLogin {
+    display: none;
+  }
+
+  .direitaLogin {
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
 }

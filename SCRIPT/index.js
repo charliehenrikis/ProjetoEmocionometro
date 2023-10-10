@@ -1,32 +1,20 @@
-var voltarLogin = document.getElementById("voltarLogin");
+// faz com ao clicar em entrar redireciona para a página index.html
+var botao = document.getElementById("redirecionarBotao");
 
-voltarLogin.addEventListener("click", function () {
-  window.location.href = "login.html";
+botao.addEventListener("click", function () {
+  window.location.href = "../emocionometro/HTML/inicio.html";
 });
 
-// Código para exibir a Div Oculta no .MENU2
+//faz com que ao clicar no icone de olhinho no formulario a senha seja mostrada
+// AINDA NÃO FUNCIONAL
+function mostrarOcultarSenha() {
+  const senha = document.getElementById("senha");
+  if (senha.type == "password") {
+    senha.type = "text";
+  } else {
+    senha.type = "password";
+  }
+}
 
-  // Captura a classe .menu2
-  var menu2 = document.querySelector(".menu2");
-  var menu4 = document.querySelector(".menu4");
-
-  // Captura a div que contém as divs "Professor" e "Aluno"
-  var menuExpandir = document.querySelector(".menuExpandir");
-
-  // Adiciona um evento de clique à classe .menu2
-  menu2.addEventListener("click", function () {
-    // Alterna a classe "expanded" para .menu2
-    menu2.classList.toggle("expanded");
-
-    // Exibe ou oculta a div de expansão
-    if (menu2.classList.contains("expanded")) {
-      menuExpandir.style.display = "block" ;
-      menu4.style.marginTop = "75px"
-    } else {
-      menuExpandir.style.display = "none"
-      menu4.style.marginTop = "150px"
-    }
-  // menuExpandir.style.display = menu2.classList.contains("expanded") ? "block" : "none";
-  });
-
-
+// faz com que ao preencher o email e senha o botão de entrar fique verde
+//A FAZER
