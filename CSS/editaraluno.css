@@ -192,7 +192,12 @@ input {
 
 .boxCadastro {
   display: flex;
-  flex-direction: column;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    right: 130px;
+    width: 100px;
+    height: 80px;
 }
 
 label {
@@ -204,6 +209,8 @@ label {
   font-weight: bold;
   display: flex;
   flex-direction: column;
+  position: relative;
+  right: 118px;
 }
 
 .ativo img {
@@ -222,7 +229,7 @@ select#perfil {
   color: white;
   border: 0;
   width: 16vw;
-  margin-left: 42px;
+  margin-left: 1px;
   height: 10vh;
   border-radius: 8px;
   display: flex;

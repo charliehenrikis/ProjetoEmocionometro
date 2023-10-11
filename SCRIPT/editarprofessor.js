@@ -29,29 +29,18 @@ voltarLogin.addEventListener("click", function () {
   // menuExpandir.style.display = menu2.classList.contains("expanded") ? "block" : "none";
   });
 
-  //ALTERAR FOTO ATIVO PARA INATIVO
-  const elementosAtivos = document.querySelectorAll('.ativo');
+//ALTERAR FOTO ATIVO PARA INATIVO
+const elementosAtivos = document.querySelectorAll(".ativo");
 
-  elementosAtivos.forEach(elemento => {
-    elemento.addEventListener('click', function() {
-      const imagem = elemento.querySelector('img');
-      const nomeArquivo = imagem.getAttribute('src').split('/').pop();
-    
-      if (nomeArquivo === 'desativo.png') {
-        imagem.setAttribute('src', '../IMG/ativo.png');
-      } else {
-        imagem.setAttribute('src', '../IMG/desativo.png');
-      }
-    });
-  });
-  
-  //Código para botão cadastrar Aluno
-document.addEventListener("DOMContentLoaded", function () {
-  const novoUsuarioButton = document.getElementById("novousuario");
+elementosAtivos.forEach((elemento) => {
+  elemento.addEventListener("click", function () {
+    const imagem = elemento.querySelector("img");
+    const nomeArquivo = imagem.getAttribute("src").split("/").pop();
 
-  novoUsuarioButton.addEventListener("click", function () {
-    // Redirecionar para a página desejada
-    window.location.href = "cadastraraluno.html";
+    if (nomeArquivo === "desativo.png") {
+      imagem.setAttribute("src", "../IMG/ativo.png");
+    } else {
+      imagem.setAttribute("src", "../IMG/desativo.png");
+    }
   });
 });
-  
