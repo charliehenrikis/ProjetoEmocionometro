@@ -2,7 +2,7 @@
 var botao = document.getElementById("redirecionarBotao");
 
 botao.addEventListener("click", function () {
-  window.location.href = "../emocionometro/HTML/inicio.html";
+  window.location.href = "./HTML/inicio.html";
 });
 
 //faz com que ao clicar no icone de olhinho no formulario a senha seja mostrada
