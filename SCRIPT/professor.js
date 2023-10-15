@@ -29,21 +29,6 @@ menu2.addEventListener("click", function () {
   // menuExpandir.style.display = menu2.classList.contains("expanded") ? "block" : "none";
 });
 
-//ALTERAR FOTO ATIVO PARA INATIVO
-const elementosAtivos = document.querySelectorAll(".ativo");
-
-elementosAtivos.forEach((elemento) => {
-  elemento.addEventListener("click", function () {
-    const imagem = elemento.querySelector("img");
-    const nomeArquivo = imagem.getAttribute("src").split("/").pop();
-
-    if (nomeArquivo === "desativo.png") {
-      imagem.setAttribute("src", "../IMG/ativo.png");
-    } else {
-      imagem.setAttribute("src", "../IMG/desativo.png");
-    }
-  });
-});
 
 //Código para botão cadastrar Professor
 document.addEventListener("DOMContentLoaded", function () {
@@ -54,3 +39,30 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "cadastrarprofessor.html";
   });
 });
+
+//Apartir daqui Json Server
+const getProfessor = async () => {
+  const apiUrl = await fetch("http:///localhost:3000/Professor");
+  const professor = await apiUrl.json();
+  exbirProfessor(professor);
+};
+
+const exbirProfessor = (professor) => {
+  const content = document.getElementById("content");
+  professor.forEach((prof) => {
+    const professorHTML = `<tr>
+    <td>${prof.Nome}</td>
+    <td>${prof.Disciplina}</td>
+    <td>${prof.Perfil}</td>
+    <td class="ativo">
+                  <img src=${prof.Ativo} alt="" />
+                </td>
+                <td class="action">
+                  <img src="../IMG/ações.png" alt="modificar" />
+                  <img src="../IMG/excluir.png" alt="excluir" />
+                </td>
+    </tr>`;
+
+    content.innerHTML = content.innerHTML + professorHTML;
+  });
+};

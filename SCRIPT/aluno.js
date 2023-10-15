@@ -29,29 +29,40 @@ voltarLogin.addEventListener("click", function () {
   // menuExpandir.style.display = menu2.classList.contains("expanded") ? "block" : "none";
   });
 
-  //ALTERAR FOTO ATIVO PARA INATIVO
-  const elementosAtivos = document.querySelectorAll('.ativo');
-
-  elementosAtivos.forEach(elemento => {
-    elemento.addEventListener('click', function() {
-      const imagem = elemento.querySelector('img');
-      const nomeArquivo = imagem.getAttribute('src').split('/').pop();
-    
-      if (nomeArquivo === 'desativo.png') {
-        imagem.setAttribute('src', '../IMG/ativo.png');
-      } else {
-        imagem.setAttribute('src', '../IMG/desativo.png');
-      }
-    });
-  });
-  
   //Código para botão cadastrar Aluno
 document.addEventListener("DOMContentLoaded", function () {
   const novoUsuarioButton = document.getElementById("novousuario");
-
+  getAluno();
   novoUsuarioButton.addEventListener("click", function () {
     // Redirecionar para a página desejada
     window.location.href = "cadastraraluno.html";
   });
 });
   
+//Apartir daqui Json Server
+const getAluno = async () => {
+  const apiUrl = await fetch("http:///localhost:3000/Aluno");
+  const aluno = await apiUrl.json();
+  exbirAluno(aluno);
+};
+
+const exbirAluno = (aluno) => {
+  const content = document.getElementById("content");
+  aluno.forEach((alu) => {
+    const alunoHTML = `<tr>
+    <td>${alu.Nome}</td>
+    <td>${alu.Turma}</td>
+    <td class="ativo">
+                  <img src=${alu.Ativo} alt="" />
+                </td>
+                <td class="action">
+                  <img src="../IMG/ações.png" alt="modificar" />
+                  <img src="../IMG/excluir.png" alt="excluir" />
+                </td>
+    </tr>`;
+
+    content.innerHTML = content.innerHTML + alunoHTML;
+  });
+};
+
+

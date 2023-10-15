@@ -31,6 +31,8 @@ voltarLogin.addEventListener("click", function () {
 
 //ALTERAR FOTO ATIVO PARA INATIVO
 const elementosAtivos = document.querySelectorAll(".ativo");
+const inputAtivo = document.getElementById("ativar")
+inputAtivo.value="../IMG/ativo.png"
 
 elementosAtivos.forEach((elemento) => {
   elemento.addEventListener("click", function () {
@@ -39,8 +41,41 @@ elementosAtivos.forEach((elemento) => {
 
     if (nomeArquivo === "desativo.png") {
       imagem.setAttribute("src", "../IMG/ativo.png");
+      inputAtivo.value="../IMG/ativo.png"
     } else {
       imagem.setAttribute("src", "../IMG/desativo.png");
+      inputAtivo.value="../IMG/desativo.png"
     }
   });
 });
+
+//apartir daqui Json Server - cadastrar
+const formulario=document.getElementById('formulario')
+
+const cadastrarAluno = async (aluno) => {
+  console.log(aluno)
+  await fetch('http://localhost:3000/Aluno',{
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json, text/plain, */*',
+    'content-Type': 'application/json' 
+  },
+  body:JSON.stringify(aluno)
+  })
+  console.log('Cadastrado com sucesso')
+}
+
+formulario.addEventListener('submit', (e)=>{
+e.preventDefault()
+const Nome=formulario.elements['nome'].value
+const Turma=formulario.elements['turma'].value
+const Ativo=formulario.elements['ativar'].value
+const aluno= {
+  Nome,
+  Turma,
+  Ativo
+}
+
+cadastrarAluno(aluno)
+
+})
