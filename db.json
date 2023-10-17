@@ -1,32 +1,18 @@
 {
   "Professor": [
     {
-      "Nome": "Maria",
-      "Disciplina": "Física",
-      "Perfil": "Professor",
-      "Ativo": "../IMG/ativo.png",
-      "id": 2
-    },
-    {
-      "Nome": "Carlos",
-      "Disciplina": "Química",
-      "Perfil": "Professor",
-      "Ativo": "../IMG/desativo.png",
-      "id": 3
-    },
-    {
-      "Nome": "Ana",
-      "Disciplina": "Inglês",
-      "Perfil": "Professor",
-      "Ativo": "../IMG/ativo.png",
-      "id": 4
-    },
-    {
-      "Nome": "Pedro",
+      "Nome": "Josué",
       "Disciplina": "Geografia",
       "Perfil": "Professor",
       "Ativo": "../IMG/ativo.png",
-      "id": 5
+      "id": 3
+    },
+    {
+      "Nome": "Alexsander Angolino",
+      "Disciplina": "Geografia",
+      "Perfil": "Assistente",
+      "Ativo": "../IMG/ativo.png",
+      "id": 4
     }
   ],
   "Aluno": [
@@ -37,28 +23,10 @@
       "id": 2
     },
     {
-      "Nome": "Carlos",
-      "Turma": "Turma 404 - Manhã",
+      "Nome": "Alexsander Angolino",
+      "Turma": "Noite 307",
       "Ativo": "../IMG/ativo.png",
       "id": 3
-    },
-    {
-      "Nome": "Ana",
-      "Turma": "Turma 101 - Tarde",
-      "Ativo": "../IMG/ativo.png",
-      "id": 4
-    },
-    {
-      "Nome": "Pedro",
-      "Turma": "Turma 303 - Manhã",
-      "Ativo": "../IMG/desativo.png",
-      "id": 5
-    },
-    {
-      "Nome": "Alexsander Angolino",
-      "Turma": "303 noite",
-      "Ativo": "../IMG/desativo.png",
-      "id": 6
     }
   ]
 }

@@ -29,7 +29,6 @@ menu2.addEventListener("click", function () {
   // menuExpandir.style.display = menu2.classList.contains("expanded") ? "block" : "none";
 });
 
-
 //Código para botão cadastrar Professor
 document.addEventListener("DOMContentLoaded", function () {
   const novoUsuarioButton = document.getElementById("novousuario");
@@ -42,15 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Apartir daqui Json Server
 const getProfessor = async () => {
-  const apiUrl = await fetch("http:///localhost:3000/Professor");
+  const apiUrl = await fetch("http://localhost:3000/Professor");
   const professor = await apiUrl.json();
   exbirProfessor(professor);
 };
 
 const exbirProfessor = (professor) => {
   const content = document.getElementById("content");
+
+  content.innerHTML = ""; //pra impedir duplicacao antes de excluir
+
   professor.forEach((prof) => {
-    const professorHTML = `<tr>
+    const professorHTML = `
+    <tr>
     <td>${prof.Nome}</td>
     <td>${prof.Disciplina}</td>
     <td>${prof.Perfil}</td>
@@ -58,11 +61,23 @@ const exbirProfessor = (professor) => {
                   <img src=${prof.Ativo} alt="" />
                 </td>
                 <td class="action">
-                  <img src="../IMG/ações.png" alt="modificar" />
-                  <img src="../IMG/excluir.png" alt="excluir" />
+                  <img src="../IMG/ações.png" alt="modificar" id="imagemEditar"
+                  onclick="editarProfessor(${prof.id})" />
+                  <img src="../IMG/excluir.png" alt="excluir" id="imagemDeletar" onclick="excluirProfessor(${prof.id})" />
                 </td>
     </tr>`;
 
     content.innerHTML = content.innerHTML + professorHTML;
   });
 };
+
+
+//METHOD DELETE
+const excluirProfessor = async (id) => {
+  await fetch(`http://localhost:3000/Professor/${id}`, { method: "DELETE" });
+  getProfessor();
+};
+
+const editarProfessor = (id) =>{
+  window.location="editarprofessor.html?id=${id}"
+}

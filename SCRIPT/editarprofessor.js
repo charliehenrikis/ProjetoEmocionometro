@@ -44,3 +44,47 @@ elementosAtivos.forEach((elemento) => {
     }
   });
 });
+
+//EDITAR PROFESSOR
+
+const formulario = document.getElementById('formulario');
+let professorId = null; // variável global
+
+// captura o ID na URL do navegador
+const getIdUrl = ()=> {
+  const paramString = window.location.search;
+  const params = new URLSearchParams(paramString);
+  professorId = params.get('id');
+}
+
+const buscarProfessor = async () => {
+  const response = await fetch(`http://localhost:3000/Professor/${professorId}`);
+  const professor = await response.json();
+  return professor;
+}
+
+const carregarDadosFormulario = async (professor) => {
+  document.getElementById('Nome').value= professor.nome;
+  document.getElementById('Perfil').value= professor.Perfil;
+  document.getElementById('Disciplina').value= professor.Disciplina;
+  const imagemAtivo = document.getElementById('Ativo');
+  imagemAtivo.src = professor.Ativo;
+}
+
+const carregarDados = async () => {
+  getIdUrl();
+  const professor = await buscarProfessor();
+  carregarDadosFormulario(professor);
+}
+
+const editarProfessor = async (professor) => {
+  await fetch(`http://localhost:3000/Professor/${professorId}`, {
+    method: 'PUT',
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(professor)
+  });
+}
+

@@ -67,7 +67,7 @@
         </div>
         <div class="cadastroProfessor">
           <h1>Dados de Usuário</h1>
-          <form action="#" method="#">
+          <form action="#" method="#" id="formulario">
             <div class="formularioHorizontal">
               <div class="boxCadastro">
                 <label for="nome">Nome:</label>
@@ -81,10 +81,10 @@
 
               <div class="boxCadastro">
                 <label for="perfil">Perfil:</label>
-                <select name="perfil" id="perfil">
-                  <option value="aluno">Assistente</option>
-                  <option value="professor">Professor</option>
-                  <option value="funcionario">Funcionário</option></select
+                <select name="perfil" id="perfil" id="formulario">
+                  <option value="Assistente">Assistente</option>
+                  <option value="Professor">Professor</option>
+                  <option value="Coordenador">Coordenador</option></select
                 ><br />
               </div>
 
@@ -101,6 +101,7 @@
               <div class="ativo">
                 <label>Ativo</label>
                 <img src="../IMG/ativo.png" alt="Ativo" />
+                <input type="text" id="ativar" name="ativar" style="display:none">
               </div>
             </div>
 

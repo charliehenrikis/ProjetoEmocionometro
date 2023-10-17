@@ -31,6 +31,8 @@ voltarLogin.addEventListener("click", function () {
 
 //ALTERAR FOTO ATIVO PARA INATIVO
 const elementosAtivos = document.querySelectorAll(".ativo");
+const inputAtivo = document.getElementById("ativar")
+inputAtivo.value="../IMG/ativo.png"
 
 elementosAtivos.forEach((elemento) => {
   elemento.addEventListener("click", function () {
@@ -39,8 +41,43 @@ elementosAtivos.forEach((elemento) => {
 
     if (nomeArquivo === "desativo.png") {
       imagem.setAttribute("src", "../IMG/ativo.png");
+      inputAtivo.value="../IMG/ativo.png"
     } else {
       imagem.setAttribute("src", "../IMG/desativo.png");
+      inputAtivo.value="../IMG/desativo.png"
     }
   });
 });
+
+//Apartir daqui Json Server
+const formulario=document.getElementById('formulario')
+
+const cadastrarProfessor = async (professor) => {
+  console.log(professor)
+  await fetch('http://localhost:3000/Professor',{
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json, text/plain, */*',
+    'content-Type': 'application/json' 
+  },
+  body:JSON.stringify(professor)
+  })
+  console.log('Cadastrado com sucesso')
+}
+
+formulario.addEventListener('submit', (e)=>{
+e.preventDefault()
+const Nome=formulario.elements['nome'].value
+const Disciplina=formulario.elements['disciplina'].value
+const Perfil=formulario.elements['perfil'].value
+const Ativo=formulario.elements['ativar'].value
+const professor= {
+  Nome,
+  Disciplina,
+  Perfil,
+  Ativo
+}
+
+cadastrarProfessor(professor)
+
+})
