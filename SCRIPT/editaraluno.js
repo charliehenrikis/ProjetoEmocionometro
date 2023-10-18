@@ -97,7 +97,7 @@ const editarAluno = async () => {
     },
     body: JSON.stringify(aluno),
   });
-  window.location.href = "../HTML/Aluno.html";
+  window.location.href = "../HTML/aluno.html";
 };
 
 getIdUrl();

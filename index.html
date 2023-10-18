@@ -27,7 +27,7 @@
                 <div class="textBox">
                     <input
                         type="email"
-                        placeholder=" "
+                        placeholder="Insira seu E-mail"
                         name="email"
                         id="email"
                         required
@@ -38,12 +38,16 @@
                 <div class="textBox">
                     <input
                         type="password"
-                        placeholder=" "
+                        placeholder="Insira sua senha"
                         name="senha"
                         id="senha"
                         required
                     />
-                    <label for="senha">Senha:</label>
+                    <label for="senha" >Senha:</label>
+                    <i class="fas fa-eye" id="togglePassword" onclick="togglePasswordVisibility('senha', 'togglePassword')"></i>
+
+
+                    
                     
                 </div>
             </form>

@@ -48,7 +48,7 @@ body {
 .menu1 a {
   text-decoration: none;
   color: rgba(170, 111, 52, 1);
-} 
+}
 
 .menu2 {
   width: 91%;
@@ -184,10 +184,76 @@ body {
   border-radius: 10%;
   width: 280px;
   height: 110px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .graficoLado {
   margin-right: 140px;
   margin-top: 2px;
+}
+
+.acimaDoImg {
+  padding: 10px;
+  position: fixed;
+  top: 81px;
+  left: 231px;
+  right: 215px;
+  display: flex;
+}
+
+.textPai {
+  display: flex;
+  position: relative;
+  left: 537px;
+  top: 10px;
+}
+
+.textCima {
+font-weight: bold;
+font-size: 22px;
+}
+
+.textCimaLado1 {
+  color: rgba(189, 189, 189, 1);
+  position: relative;
+  font-weight: bold;
+  right: 36px;
+}
+
+.textCimaLado2 {
+  position: relative;
+  font-weight: bold;
+  right: 5px;
+}
+
+.textCimaLado3 {
+  color: rgba(189, 189, 189, 1);
+  position: relative;
+  font-weight: bold;
+  right: -25px;
+}
+
+.barraPai {
+  display: flex;
+  position: relative;
+  left: 362px;
+  top: 53px;
+}
+
+.barra1 {
+  width: 75px;
+  height: 4px;
+  background: rgba(189, 189, 189, 1);
+}
+
+.barra2 {
+  width: 75px;
+  height: 4px;;
+  background: rgba(249, 228, 35, 1);
+}
+
+.barra3 {
+  width: 75px;
+  height: 4px;
+  background: rgba(189, 189, 189, 1);
 }
