@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400&family=Nunito:wght@300&family=Poppins:wght@100&family=Roboto:wght@100&display=swap"
       rel="stylesheet"
     />
+    <script src="../SCRIPT/editarprofessor.js" defer></script>
     <title>Inicio</title>
   </head>
   <body>
@@ -55,7 +56,8 @@
           <div class="menu4">
             <img src="../IMG/iconUSER2.png" alt="user" /> Meu Perfil
           </div>
-          <div class="menu5" id="voltarLogin">
+          <div class="menu5" id="voltarLogin" onclick="voltarAoInicio()">
+          
             <img src="../IMG/iconSAIR.png" alt="sair" /> Sair
           </div>
         </div>
@@ -82,9 +84,9 @@
               <div class="boxCadastro">
                 <label for="perfil">Perfil:</label>
                 <select name="perfil" id="perfil">
-                  <option value="aluno">Assistente</option>
-                  <option value="professor">Professor</option>
-                  <option value="funcionario">Funcionário</option></select
+                  <option value="Assistente">Assistente</option>
+                  <option value="Professor">Professor</option>
+                  <option value="Funcionario">Funcionário</option></select
                 ><br />
               </div>
 
@@ -100,12 +102,12 @@
 
               <div class="ativo">
                 <label>Ativo</label>
-                <img src="../IMG/ativo.png" alt="Ativo" />
+                <img id="ativo"  src="../IMG/ativo.png" alt="Ativo" />
               </div>
             </div>
 
             <div class="botaoCadastro">
-              <button id="BotaoEntrar" type="submit" class="entrar">Salvar</button>
+              <button id="BotaoEntrar" type="button" onclick="editarProfessor()" class="entrar">Salvar</button>
             </div>
 
           </form>
@@ -113,6 +115,6 @@
       </div>
     </div>
 
-    <script src="../SCRIPT/editarprofessor.js"></script>
+    
   </body>
 </html>

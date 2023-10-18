@@ -1,4 +1,4 @@
-var voltarLogin = document.getElementById("voltarLogin");
+let voltarLogin = document.getElementById("voltarLogin");
 
 voltarLogin.addEventListener("click", function () {
   window.location.href = "../index.html";
@@ -7,11 +7,11 @@ voltarLogin.addEventListener("click", function () {
 // Código para exibir a Div Oculta no .MENU2
 
 // Captura a classe .menu2
-var menu2 = document.querySelector(".menu2");
-var menu4 = document.querySelector(".menu4");
+let menu2 = document.querySelector(".menu2");
+let menu4 = document.querySelector(".menu4");
 
 // Captura a div que contém as divs "Professor" e "Aluno"
-var menuExpandir = document.querySelector(".menuExpandir");
+let menuExpandir = document.querySelector(".menuExpandir");
 
 // Adiciona um evento de clique à classe .menu2
 menu2.addEventListener("click", function () {
@@ -52,17 +52,20 @@ const exbirProfessor = (professor) => {
   content.innerHTML = ""; //pra impedir duplicacao antes de excluir
 
   professor.forEach((prof) => {
+    const imagemAtivo=prof.Ativo
+    ? "../IMG/ativo.png"
+    : "../IMG/desativo.png";
     const professorHTML = `
     <tr>
     <td>${prof.Nome}</td>
     <td>${prof.Disciplina}</td>
     <td>${prof.Perfil}</td>
     <td class="ativo">
-                  <img src=${prof.Ativo} alt="" />
+                  <img src=${imagemAtivo} alt="" />
                 </td>
                 <td class="action">
                   <img src="../IMG/ações.png" alt="modificar" id="imagemEditar"
-                  onclick="editarProfessor(${prof.id})" />
+                  onclick="irParaEdicao(${prof.id})" />
                   <img src="../IMG/excluir.png" alt="excluir" id="imagemDeletar" onclick="excluirProfessor(${prof.id})" />
                 </td>
     </tr>`;
@@ -72,12 +75,13 @@ const exbirProfessor = (professor) => {
 };
 
 
+
 //METHOD DELETE
 const excluirProfessor = async (id) => {
   await fetch(`http://localhost:3000/Professor/${id}`, { method: "DELETE" });
   getProfessor();
 };
 
-const editarProfessor = (id) =>{
-  window.location="editarprofessor.html?id=${id}"
+const irParaEdicao = (id) =>{
+  window.location=`editarprofessor.html?id=${id}`
 }

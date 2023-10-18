@@ -31,8 +31,6 @@ voltarLogin.addEventListener("click", function () {
 
 //ALTERAR FOTO ATIVO PARA INATIVO
 const elementosAtivos = document.querySelectorAll(".ativo");
-const inputAtivo = document.getElementById("ativar")
-inputAtivo.value="../IMG/ativo.png"
 
 elementosAtivos.forEach((elemento) => {
   elemento.addEventListener("click", function () {
@@ -41,13 +39,12 @@ elementosAtivos.forEach((elemento) => {
 
     if (nomeArquivo === "desativo.png") {
       imagem.setAttribute("src", "../IMG/ativo.png");
-      inputAtivo.value="../IMG/ativo.png"
     } else {
       imagem.setAttribute("src", "../IMG/desativo.png");
-      inputAtivo.value="../IMG/desativo.png"
     }
   });
 });
+
 
 //apartir daqui Json Server - cadastrar
 const formulario=document.getElementById('formulario')
