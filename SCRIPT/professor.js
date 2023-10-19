@@ -53,8 +53,6 @@ const exbirProfessor = (professor) => {
 
   professor.forEach((prof) => {
     const imagemAtivo=prof.Ativo
-    ? "../IMG/ativo.png"
-    : "../IMG/desativo.png";
     const professorHTML = `
     <tr>
     <td>${prof.Nome}</td>

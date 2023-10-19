@@ -1,4 +1,4 @@
-var voltarLogin = document.getElementById("voltarLogin");
+let voltarLogin = document.getElementById("voltarLogin");
 
 voltarLogin.addEventListener("click", function () {
   window.location.href = "../index.html";
@@ -7,11 +7,11 @@ voltarLogin.addEventListener("click", function () {
 // Código para exibir a Div Oculta no .MENU2
 
   // Captura a classe .menu2
-  var menu2 = document.querySelector(".menu2");
-  var menu4 = document.querySelector(".menu4");
+  let menu2 = document.querySelector(".menu2");
+  let menu4 = document.querySelector(".menu4");
 
   // Captura a div que contém as divs "Professor" e "Aluno"
-  var menuExpandir = document.querySelector(".menuExpandir");
+  let menuExpandir = document.querySelector(".menuExpandir");
 
   // Adiciona um evento de clique à classe .menu2
   menu2.addEventListener("click", function () {
@@ -63,7 +63,7 @@ const cadastrarAluno = async (aluno) => {
 }
 
 formulario.addEventListener('submit', (e)=>{
-e.preventDefault()
+  e.preventDefault();
 const Nome=formulario.elements['nome'].value
 const Turma=formulario.elements['turma'].value
 const Ativo=formulario.elements['ativar'].value
@@ -71,7 +71,7 @@ const aluno= {
   Nome,
   Turma,
   Ativo
-}
+};
 
 cadastrarAluno(aluno)
 

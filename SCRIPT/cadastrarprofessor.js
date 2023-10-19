@@ -66,7 +66,7 @@ const cadastrarProfessor = async (professor) => {
 }
 
 formulario.addEventListener('submit', (e)=>{
-e.preventDefault()
+e.preventDefault();
 const Nome=formulario.elements['nome'].value
 const Disciplina=formulario.elements['disciplina'].value
 const Perfil=formulario.elements['perfil'].value

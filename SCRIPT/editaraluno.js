@@ -45,7 +45,7 @@ elementosAtivos.forEach((elemento) => {
   });
 });
 
-//EDITAR PROFESSOR
+//EDITAR ALUNO
 let alunoId;
 
 // captura o ID na URL do navegador
@@ -56,7 +56,7 @@ const getIdUrl = () => {
   carregarDados(alunoId);
 };
 
-const buscarProfessor = async (id) => {
+const buscarAluno = async (id) => {
   const response = await fetch(`http://localhost:3000/Aluno/${id}`);
   const aluno = await response.json();
   return aluno;
@@ -67,8 +67,7 @@ const carregarDadosFormulario = (aluno) => {
   document.getElementById("turma").value = aluno.Turma;
   const imagemAtivo = document.getElementById("ativo");
   imagemAtivo.src = aluno.Ativo
-    ? "../IMG/ativo.png"
-    : "../IMG/desativo.png";
+    ? "../IMG/ativo.png" : "../IMG/desativo.png";
 };
 
 const carregarDados = async (id) => {
@@ -83,7 +82,12 @@ const editarAluno = async () => {
   const Nome = document.getElementById("nome").value;
   const Turma = document.getElementById("turma").value;
   const imagemAtivo = document.getElementById("ativo");
-  const Ativo = imagemAtivo.src.endsWith("ativo.png");
+  const src = imagemAtivo.src
+  const indexImg = src.indexOf('IMG')
+  let Ativo = ''
+  if (indexImg !== -1) {
+    Ativo = '../' + src.slice(indexImg)
+  }
   const aluno = {
     Nome,
     Turma,

@@ -68,8 +68,7 @@ const carregarDadosFormulario = (professor) => {
   document.getElementById("disciplina").value = professor.Disciplina;
   const imagemAtivo = document.getElementById("ativo");
   imagemAtivo.src = professor.Ativo
-    ? "../IMG/ativo.png"
-    : "../IMG/desativo.png";
+    ? "../IMG/ativo.png" : "../IMG/desativo.png";
 };
 
 const carregarDados = async (id) => {
@@ -85,7 +84,13 @@ const editarProfessor = async () => {
   const Perfil = document.getElementById("perfil").value;
   const Disciplina = document.getElementById("disciplina").value;
   const imagemAtivo = document.getElementById("ativo");
-  const Ativo = imagemAtivo.src.endsWith("ativo.png");
+  const src = imagemAtivo.src
+  const indexImg = src.indexOf('IMG')
+  let Ativo = ''
+  if (indexImg !== -1) {
+    Ativo = '../' + src.slice(indexImg)
+    console.log(Ativo)
+  } 
   const professor = {
     Nome,
     Disciplina,
@@ -95,7 +100,7 @@ const editarProfessor = async () => {
   await fetch(`http://localhost:3000/Professor/${professorId}`, {
     method: "PUT",
     headers: {
-      'Accept': "application/json, text/plain, /",
+      Accept: "application/json, text/plain, /",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(professor),

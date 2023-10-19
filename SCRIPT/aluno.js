@@ -1,4 +1,4 @@
-var voltarLogin = document.getElementById("voltarLogin");
+let voltarLogin = document.getElementById("voltarLogin");
 
 voltarLogin.addEventListener("click", function () {
   window.location.href = "../index.html";
@@ -7,11 +7,11 @@ voltarLogin.addEventListener("click", function () {
 // Código para exibir a Div Oculta no .MENU2
 
 // Captura a classe .menu2
-var menu2 = document.querySelector(".menu2");
-var menu4 = document.querySelector(".menu4");
+let menu2 = document.querySelector(".menu2");
+let menu4 = document.querySelector(".menu4");
 
 // Captura a div que contém as divs "Professor" e "Aluno"
-var menuExpandir = document.querySelector(".menuExpandir");
+let menuExpandir = document.querySelector(".menuExpandir");
 
 // Adiciona um evento de clique à classe .menu2
 menu2.addEventListener("click", function () {
@@ -32,7 +32,7 @@ menu2.addEventListener("click", function () {
 //Código para botão cadastrar Aluno
 document.addEventListener("DOMContentLoaded", function () {
   const novoUsuarioButton = document.getElementById("novousuario");
-  getAluno();
+
   novoUsuarioButton.addEventListener("click", function () {
     // Redirecionar para a página desejada
     window.location.href = "cadastraraluno.html";
@@ -58,7 +58,7 @@ const exbirAluno = (aluno) => {
       <td>${alu.Turma}</td>
       <td class="ativo">
         <img src="${
-          alu.Ativo ? "../IMG/ativo.png" : "../IMG/desativo.png"
+          alu.Ativo
         }" alt="" />
       </td>
       <td class="action">

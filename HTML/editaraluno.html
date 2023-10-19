@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400&family=Nunito:wght@300&family=Poppins:wght@100&family=Roboto:wght@100&display=swap"
       rel="stylesheet"
     />
+    <script src="../SCRIPT/editaraluno.js" defer></script>
     <title>Inicio</title>
   </head>
   <body>
@@ -80,30 +81,34 @@
               </div>
 
               <div class="boxCadastro">
-                <label for="disciplina">Turma</label>
+                <label for="turma">Turma</label>
                 <input
                   type="text"
-                  id="disciplina"
-                  name="disciplina"
+                  id="turma"
+                  name="turma"
                   placeholder="Digite a Turma"
                 /><br />
               </div>
 
               <div class="ativo">
                 <label>Ativo</label>
-                <img src="../IMG/ativo.png" alt="Ativo" />
+                <img id="ativo" src="../IMG/ativo.png" alt="Ativo" />
               </div>
             </div>
 
             <div class="botaoCadastro">
-              <button id="BotaoEntrar" type="submit" class="entrar">Salvar</button>
+              <button
+                id="BotaoEntrar"
+                type="button"
+                onclick="editarAluno()"
+                class="entrar"
+              >
+                Salvar
+              </button>
             </div>
-
           </form>
         </div>
       </div>
     </div>
-
-    <script src="../SCRIPT/cadastraraluno.js"></script>
   </body>
 </html>
