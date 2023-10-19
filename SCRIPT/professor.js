@@ -29,7 +29,7 @@ menu2.addEventListener("click", function () {
   // menuExpandir.style.display = menu2.classList.contains("expanded") ? "block" : "none";
 });
 
-//Código para botão cadastrar Professor
+// Código para botão cadastrar Professor
 document.addEventListener("DOMContentLoaded", function () {
   const novoUsuarioButton = document.getElementById("novousuario");
 
@@ -39,47 +39,63 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//Apartir daqui Json Server
+// A partir daqui, lógica para buscar professores
+let professorData = []; // Para armazenar os dados de professores
+
 const getProfessor = async () => {
   const apiUrl = await fetch("http://localhost:3000/Professor");
-  const professor = await apiUrl.json();
-  exbirProfessor(professor);
+  professorData = await apiUrl.json();
+  exibirProfessor(""); // Exibe todos os professores inicialmente
 };
 
-const exbirProfessor = (professor) => {
+const exibirProfessor = (searchValue) => {
   const content = document.getElementById("content");
 
-  content.innerHTML = ""; //pra impedir duplicacao antes de excluir
+  content.innerHTML = ""; // Limpar o conteúdo antes de exibir os resultados
 
-  professor.forEach((prof) => {
-    const imagemAtivo=prof.Ativo
-    const professorHTML = `
-    <tr>
-    <td>${prof.Nome}</td>
-    <td>${prof.Disciplina}</td>
-    <td>${prof.Perfil}</td>
-    <td class="ativo">
-                  <img src=${imagemAtivo} alt="" />
-                </td>
-                <td class="action">
-                  <img src="../IMG/ações.png" alt="modificar" id="imagemEditar"
-                  onclick="irParaEdicao(${prof.id})" />
-                  <img src="../IMG/excluir.png" alt="excluir" id="imagemDeletar" onclick="excluirProfessor(${prof.id})" />
-                </td>
-    </tr>`;
+  professorData.forEach((prof) => {
+    if (prof.Nome.toLowerCase().includes(searchValue.toLowerCase())) {
+      const imagemAtivo = prof.Ativo;
+      const professorHTML = `
+        <tr>
+          <td>${prof.Nome}</td>
+          <td>${prof.Disciplina}</td>
+          <td>${prof.Perfil}</td>
+          <td class="ativo">
+            <img src="${imagemAtivo}" alt="" />
+          </td>
+          <td class="action">
+            <img src="../IMG/ações.png" alt="modificar" id="imagemEditar" onclick="irParaEdicao(${prof.id})" />
+            <img src="../IMG/excluir.png" alt="excluir" id="imagemDeletar" onclick="excluirProfessor(${prof.id})" />
+          </td>
+        </tr>`;
 
-    content.innerHTML = content.innerHTML + professorHTML;
+      content.innerHTML += professorHTML;
+    }
   });
 };
 
+const buscaInput = document.getElementById("buscaInput");
 
+buscaInput.addEventListener("input", () => {
+  const buscaValor = buscaInput.value;
+  if (buscaValor.length >= 3) {
+    exibirProfessor(buscaValor); // Atualiza a exibição com base na pesquisa
+  } else {
+    // Se o comprimento for inferior a 3, limpe a exibição
+    exibirProfessor(""); // Exibe todos os alunos novamente
+  }
+});
 
-//METHOD DELETE
+// Método DELETE
 const excluirProfessor = async (id) => {
   await fetch(`http://localhost:3000/Professor/${id}`, { method: "DELETE" });
-  getProfessor();
+  getProfessor(); // Atualiza a lista de professores após a exclusão
 };
 
-const irParaEdicao = (id) =>{
-  window.location=`editarprofessor.html?id=${id}`
-}
+const irParaEdicao = (id) => {
+  window.location = `editarprofessor.html?id=${id}`;
+};
+
+// Inicialmente, carregue os dados dos professores
+getProfessor();

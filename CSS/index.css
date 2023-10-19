@@ -70,7 +70,11 @@ body {
   justify-content: center;
 }
 
-.submit-button {
+.entrar.preenchido {
+  background-color: #00c247;
+}
+
+.botaoInicio {
   padding: 20px;
   display: flex;
   align-items: center;
@@ -97,6 +101,14 @@ body {
   transform: translateY(-50%);
   background-color: white;
   padding: 0 0.5rem;
+}
+
+input#email {
+  font-family: 'Nunito';
+}
+
+input#senha {
+  font-family: 'Nunito';
 }
 
 .lembrarText {

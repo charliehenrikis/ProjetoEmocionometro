@@ -255,4 +255,8 @@ td {
   padding: 5px;
 }
 
+input[type="text"] {
+  font-family: 'Nunito';
+  width: 175px; 
+}
 

@@ -29,7 +29,7 @@ menu2.addEventListener("click", function () {
   // menuExpandir.style.display = menu2.classList.contains("expanded") ? "block" : "none";
 });
 
-//Código para botão cadastrar Aluno
+// Código para botão cadastrar Aluno
 document.addEventListener("DOMContentLoaded", function () {
   const novoUsuarioButton = document.getElementById("novousuario");
 
@@ -39,48 +39,63 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// A partir daqui, lógica para buscar Alunos
+let alunoData = []; // Para armazenar os dados de Alunos
+
 //Apartir daqui Json Server
 const getAluno = async () => {
-  const apiUrl = await fetch("http:///localhost:3000/Aluno");
-  const aluno = await apiUrl.json();
-  exbirAluno(aluno);
+  const apiUrl = await fetch("http://localhost:3000/Aluno"); // Correção: Removi uma barra extra na URL
+  alunoData = await apiUrl.json();
+  exibirAluno(""); // Exibe todos os alunos inicialmente
 };
 
-const exbirAluno = (aluno) => {
+const exibirAluno = (searchValue) => {
   const content = document.getElementById("content");
 
   content.innerHTML = ""; //pra impedir duplicacao antes de excluir
 
-  aluno.forEach((alu) => {
+  alunoData.forEach((alu) => {
+    if (alu.Nome.toLowerCase().includes(searchValue.toLowerCase())){
+    const imagemAtivo = alu.Ativo;
     const alunoHTML = `
     <tr>
       <td>${alu.Nome}</td>
       <td>${alu.Turma}</td>
       <td class="ativo">
-        <img src="${
-          alu.Ativo
-        }" alt="" />
+        <img src="${imagemAtivo}" alt="" />
       </td>
       <td class="action">
-        <img src="../IMG/ações.png" alt="modificar" onclick="irParaEdicao(${
-          alu.id
-        })" />
-        <img src="../IMG/excluir.png" alt="excluir" onclick="excluirAluno(${
-          alu.id
-        })" />
+        <img src="../IMG/ações.png" alt="modificar" onclick="irParaEdicao(${alu.id})" />
+        <img src="../IMG/excluir.png" alt="excluir" onclick="excluirAluno(${alu.id})" />
       </td>
     </tr>`;
 
-    content.innerHTML = content.innerHTML + alunoHTML;
+    content.innerHTML += alunoHTML; // Correção: Use += para adicionar, não substituir
+    }
   });
 };
 
-//METHOD DELETE
+const buscaInput = document.getElementById("buscaInput");
+
+buscaInput.addEventListener("input", () => {
+  const buscaValor = buscaInput.value;
+  if (buscaValor.length >= 3) {
+    exibirAluno(buscaValor); // Atualiza a exibição com base na pesquisa
+  } else {
+    // Se o comprimento for inferior a 3, limpe a exibição
+    exibirAluno(""); // Exibe todos os alunos novamente
+  }
+});
+
+// Método DELETE
 const excluirAluno = async (id) => {
   await fetch(`http://localhost:3000/Aluno/${id}`, { method: "DELETE" });
-  getAluno();
+  getAluno(); // Atualiza a lista de alunos após a exclusão
 };
 
 const irParaEdicao = (id) => {
-  window.location = `editarAluno.html?id=${id}`;
+  window.location = `editaraluno.html?id=${id}`;
 };
+
+// Inicialmente, carregue os dados dos alunos
+getAluno();

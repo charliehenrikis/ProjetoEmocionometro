@@ -63,6 +63,7 @@ const cadastrarProfessor = async (professor) => {
   body:JSON.stringify(professor)
   })
   console.log('Cadastrado com sucesso')
+  window.location = "professor.html"
 }
 
 formulario.addEventListener('submit', (e)=>{
