@@ -26,7 +26,7 @@ menu2.addEventListener("click", function () {
     menuExpandir.style.display = "none";
     menu4.style.marginTop = "150px";
   }
-  // menuExpandir.style.display = menu2.classList.contains("expanded") ? "block" : "none";
+  
 });
 
 // Código para botão cadastrar Professor
