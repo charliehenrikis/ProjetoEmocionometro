@@ -260,3 +260,30 @@ input[type="text"] {
   font-family: 'Nunito';
   width: 175px; 
 }
+
+.barras {
+  display: flex;
+    width: 100%;
+    position: fixed;
+    top: 71px;
+    left: 0;
+}
+
+.barra {
+  width: 25%;
+  height: 3px;
+}
+
+.cor1{
+background: rgba(170, 111, 52, 1);
+}
+.cor2{
+background: rgba(210, 119, 46, 1);
+}
+.cor3{
+background: rgba(244, 130, 33, 1);
+}
+.cor4 {
+background-color: rgba(250, 166, 26, 1);
+}
+
