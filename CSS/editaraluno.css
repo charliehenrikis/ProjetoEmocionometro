@@ -190,6 +190,10 @@ input {
   height: 30px;
 }
 
+input#nome {
+  font-family: "Nunito";
+}
+
 .boxCadastro {
   display: flex;
     flex-direction: column;
@@ -201,6 +205,7 @@ input {
 }
 
 label {
+  font-family: "Nunito";
   font-weight: bold;
 }
 
@@ -220,6 +225,7 @@ label {
 }
 
 select#perfil {
+  font-family: "Nunito";
   width: 200px;
   height: 35px;
 }

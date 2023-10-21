@@ -44,7 +44,7 @@ let alunoData = []; // Para armazenar os dados de Alunos
 
 //Apartir daqui Json Server
 const getAluno = async () => {
-  const apiUrl = await fetch("http://localhost:3000/Aluno"); // Correção: Removi uma barra extra na URL
+  const apiUrl = await fetch("https://dbjson-emocionometro-q03p.onrender.com/Aluno"); // Correção: Removi uma barra extra na URL
   alunoData = await apiUrl.json();
   exibirAluno(""); // Exibe todos os alunos inicialmente
 };
@@ -89,7 +89,7 @@ buscaInput.addEventListener("input", () => {
 
 // Método DELETE
 const excluirAluno = async (id) => {
-  await fetch(`http://localhost:3000/Aluno/${id}`, { method: "DELETE" });
+  await fetch(`https://dbjson-emocionometro-q03p.onrender.com/Aluno/${id}`, { method: "DELETE" });
   getAluno(); // Atualiza a lista de alunos após a exclusão
 };
 

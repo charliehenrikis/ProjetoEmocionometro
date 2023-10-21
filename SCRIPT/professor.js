@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 let professorData = []; // Para armazenar os dados de professores
 
 const getProfessor = async () => {
-  const apiUrl = await fetch("http://localhost:3000/Professor");
+  const apiUrl = await fetch("https://dbjson-emocionometro-q03p.onrender.com/Professor");
   professorData = await apiUrl.json();
   exibirProfessor(""); // Exibe todos os professores inicialmente
 };
@@ -89,7 +89,7 @@ buscaInput.addEventListener("input", () => {
 
 // Método DELETE
 const excluirProfessor = async (id) => {
-  await fetch(`http://localhost:3000/Professor/${id}`, { method: "DELETE" });
+  await fetch(`https://dbjson-emocionometro-q03p.onrender.com/Professor/${id}`, { method: "DELETE" });
   getProfessor(); // Atualiza a lista de professores após a exclusão
 };
 

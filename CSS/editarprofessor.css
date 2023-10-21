@@ -186,6 +186,7 @@ body {
 }
 
 input {
+  font-family: "Nunito";
   width: 200px;
   height: 30px;
 }
@@ -196,6 +197,7 @@ input {
 }
 
 label {
+  font-family: "Nunito";
   font-weight: bold;
 }
 
@@ -213,6 +215,7 @@ label {
 }
 
 select#perfil {
+  font-family: "Nunito";
   width: 200px;
   height: 35px;
 }

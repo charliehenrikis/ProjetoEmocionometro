@@ -54,7 +54,7 @@ const formulario=document.getElementById('formulario')
 
 const cadastrarProfessor = async (professor) => {
   console.log(professor)
-  await fetch('http://localhost:3000/Professor',{
+  await fetch('https://dbjson-emocionometro-q03p.onrender.com/Professor',{
   method: 'POST',
   headers: {
     'Accept': 'application/json, text/plain, */*',

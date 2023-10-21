@@ -1,16 +1,9 @@
 {
   "Professor": [
     {
-      "Nome": "Lucas Alberto Souza",
-      "Disciplina": "Inglês",
+      "Nome": "Neymar",
+      "Disciplina": "Ed.Física",
       "Perfil": "Professor",
-      "Ativo": "../IMG/desativo.png",
-      "id": 5
-    },
-    {
-      "Nome": "Charlinho",
-      "Disciplina": "Inglês",
-      "Perfil": "Funcionario",
       "Ativo": "../IMG/desativo.png",
       "id": 7
     },
@@ -18,7 +11,7 @@
       "Nome": "Higor Leite",
       "Disciplina": "Biologia",
       "Perfil": "Professor",
-      "Ativo": "../IMG/ativo.png",
+      "Ativo": "../IMG/desativo.png",
       "id": 8
     },
     {
@@ -33,7 +26,7 @@
     {
       "Nome": "Charles Henrique Rocha",
       "Turma": "Turma 202 - Manhã",
-      "Ativo": "../IMG/ativo.png",
+      "Ativo": "../IMG/desativo.png",
       "id": 1
     },
     {
